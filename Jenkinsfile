@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/ANASEDAHBI/hello-world.git'
+                git branch: 'main', url: 'https://github.com/anassedahbi/hello-world.git'
             }
         }
         stage('Build with Maven') {
