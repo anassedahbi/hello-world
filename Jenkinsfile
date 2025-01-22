@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'mvn clean package'
+                        bat 'mvn clean package'
                     } catch (Exception e) {
                         echo "Error during Maven builddd bro"
                         throw e
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('List Generated Files') {
             steps {
-                sh 'ls -l target'
+                bat 'ls -l target'
             }
         }
     }
