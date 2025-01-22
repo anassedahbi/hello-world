@@ -3,12 +3,25 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/anassedahbi/hello-world.git'
+                git branch: 'main',
+                    url: 'https://github.com/anassedahbi/hello-world.git'
             }
         }
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean package'
+                script {
+                    try {
+                        sh 'mvn clean package'
+                    } catch (Exception e) {
+                        echo "Error during Maven build"
+                        throw e
+                    }
+                }
+            }
+        }
+        stage('List Generated Files') {
+            steps {
+                sh 'ls -l target'
             }
         }
     }
