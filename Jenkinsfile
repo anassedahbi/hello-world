@@ -24,7 +24,7 @@ pipeline {
         }
         stage('List Generated Files') {
             steps {
-                bat 'ls -l target'
+                bat 'dir target'
             }
         }
     }
