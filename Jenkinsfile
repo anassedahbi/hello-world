@@ -13,7 +13,7 @@ pipeline {
                     try {
                         sh 'mvn clean package'
                     } catch (Exception e) {
-                        echo "Error during Maven build bro"
+                        echo "Error during Maven builddd bro"
                         throw e
                     }
                 }
