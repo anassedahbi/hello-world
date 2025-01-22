@@ -4,8 +4,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/anassedahbi/hello-world.git',
-                    tool: 'Default Git'
+                    url: 'https://github.com/anassedahbi/hello-world.git'
             }
         }
         stage('Build with Maven') {
