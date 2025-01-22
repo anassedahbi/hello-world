@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+            MAVEN_OPTS = "-Dmaven.repo.local=C:/jenkins/.m2/repository"
+        }
     stages {
         stage('Clone Repository') {
             steps {
