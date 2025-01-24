@@ -71,8 +71,8 @@ pipeline {
                 script {
                     try {
                         bat """
-                        docker stop hello-world || true
-                        docker rm hello-world || true
+                        docker stop hello-world || exit 0
+                        docker rm hello-world || exit 0
                         docker run -d -p 8080:8080 --name hello-world ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:latest
                         """
                     } catch (Exception e) {
