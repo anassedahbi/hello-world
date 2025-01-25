@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        bat 'mvn clean package'
+                        bat 'mvn clean package -U'
                     } catch (Exception e) {
                         echo "Error during Maven build bro"
                         throw e
