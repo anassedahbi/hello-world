@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copier le fichier JAR généré par Maven dans le conteneur
-COPY target/*.jar app.jar
+COPY target/hello-world-1.0-SNAPSHOT.jar app.jar
 
 # Exposer le port sur lequel l'application sera accessible
 EXPOSE 8080
